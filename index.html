@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandan Kumar - QA Engineer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #667eea;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-category li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            color: #667eea;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .experience-date {
+            color: #666;
+            font-style: italic;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item strong {
+            color: #667eea;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+            <h1>Chandan Kumar</h1>
+            <p class="subtitle">QA Engineer | Test Automation Specialist | Quality Assurance Professional</p>
+            <div class="social-links">
+                <a href="https://github.com/ChandanKumarQA" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="resume.pdf" target="_blank">Resume</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>About Me</h2>
+            <p>Passionate QA Engineer with expertise in manual and automation testing. Dedicated to ensuring software quality through comprehensive testing strategies, continuous integration, and test automation frameworks. Skilled in identifying bugs, improving test coverage, and collaborating with development teams to deliver high-quality software products.</p>
+        </section>
+
+        <section class="section">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Testing Types</h3>
+                    <ul>
+                        <li>Manual Testing</li>
+                        <li>Automation Testing</li>
+                        <li>API Testing</li>
+                        <li>Performance Testing</li>
+                        <li>Regression Testing</li>
+                        <li>Integration Testing</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Automation Tools</h3>
+                    <ul>
+                        <li>Selenium WebDriver</li>
+                        <li>Cypress</li>
+                        <li>TestNG / JUnit</li>
+                        <li>Cucumber BDD</li>
+                        <li>Postman</li>
+                        <li>JMeter</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                        <li>Shell Scripting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>Jenkins / CI/CD</li>
+                        <li>JIRA</li>
+                        <li>Docker</li>
+                        <li>Maven / Gradle</li>
+                        <li>REST APIs</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Senior QA Engineer - Company Name</span>
+                    <span class="experience-date">Jan 2022 - Present</span>
+                </div>
+                <p>Leading QA initiatives for enterprise-level applications, implementing comprehensive test automation strategies, and mentoring junior QA engineers.</p>
+                <ul style="margin-top: 1rem; margin-left: 2rem;">
+                    <li>Developed and maintained automated test suites using Selenium and TestNG</li>
+                    <li>Improved test coverage by 40% through strategic automation implementation</li>
+                    <li>Integrated automated tests into CI/CD pipeline using Jenkins</li>
+                    <li>Conducted API testing using Postman and REST Assured</li>
+                    <li>Collaborated with cross-functional teams in Agile environment</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">QA Engineer - Previous Company</span>
+                    <span class="experience-date">Jun 2020 - Dec 2021</span>
+                </div>
+                <p>Performed manual and automated testing for web and mobile applications, created test plans, and executed test cases.</p>
+                <ul style="margin-top: 1rem; margin-left: 2rem;">
+                    <li>Executed functional, regression, and smoke testing</li>
+                    <li>Created detailed test documentation and bug reports in JIRA</li>
+                    <li>Automated repetitive test scenarios using Selenium WebDriver</li>
+                    <li>Participated in requirement analysis and sprint planning meetings</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+            
+            <div class="project-card">
+                <h3>E-Commerce Test Automation Framework</h3>
+                <p>Developed a comprehensive Page Object Model (POM) based Selenium framework for testing an e-commerce application with parallel execution capabilities.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Selenium</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">TestNG</span>
+                    <span class="tech-tag">Maven</span>
+                    <span class="tech-tag">Jenkins</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>API Testing Suite</h3>
+                <p>Created an automated API testing suite for REST services with data-driven testing approach and comprehensive reporting.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">REST Assured</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">JUnit</span>
+                    <span class="tech-tag">JSON</span>
+                    <span class="tech-tag">Postman</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>BDD Cucumber Framework</h3>
+                <p>Implemented behavior-driven development framework using Cucumber for better collaboration between technical and non-technical stakeholders.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Cucumber</span>
+                    <span class="tech-tag">Selenium</span>
+                    <span class="tech-tag">Gherkin</span>
+                    <span class="tech-tag">Java</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Performance Testing Project</h3>
+                <p>Conducted performance and load testing for web applications, identifying bottlenecks and providing optimization recommendations.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">JMeter</span>
+                    <span class="tech-tag">LoadRunner</span>
+                    <span class="tech-tag">Performance Analysis</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Certifications</h2>
+            <ul style="margin-left: 2rem;">
+                <li><strong>ISTQB Certified Tester</strong> - Foundation Level</li>
+                <li><strong>Selenium WebDriver with Java</strong> - Certification Course</li>
+                <li><strong>API Testing with Postman</strong> - Professional Certification</li>
+                <li><strong>Agile Testing</strong> - Certified Practitioner</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email:</strong> your.email@example.com
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong> Your City, Country
+                </div>
+                <div class="contact-item">
+                    <strong>GitHub:</strong> github.com/ChandanKumarQA
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn:</strong> linkedin.com/in/yourprofile
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Chandan Kumar. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
